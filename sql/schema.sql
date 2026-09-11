@@ -51,3 +51,13 @@ CREATE TABLE crop_yields (
     yield_kg_ha NUMERIC(10,2),
     PRIMARY KEY (iso3, year, crop)
 );
+CREATE TABLE forecasts (
+    iso3 CHAR(3) REFERENCES countries(iso3),
+    crop VARCHAR(30),
+    model_used VARCHAR(20),
+    year INT,
+    forecast_yield NUMERIC(10,2),
+    lower_ci NUMERIC(10,2),
+    upper_ci NUMERIC(10,2),
+    PRIMARY KEY (iso3, crop, year)
+);
