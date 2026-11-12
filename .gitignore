@@ -1,5 +1,39 @@
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
+# --- Secrets: never commit ---
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Power BI ---
+# The .pbix holds a full copy of the imported data. Dashboard screenshots live in images/ and the README.
+*.pbix
+*.pbit
+.pbi/
+
+# --- Data: large raw files are re-created by running notebook 01 ---
+data/raw/*
+!data/raw/.gitkeep
+
+# --- Database backups ---
+*.backup
+*.dump
+*.bak
+
+# --- Python / Jupyter ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+
+# --- OS, editor and Office junk ---
+Thumbs.db
+desktop.ini
 .DS_Store
+.vscode/
+.idea/
+~$*
+*.tmp
+*.log
